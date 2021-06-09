@@ -86,14 +86,14 @@ class Budget:
         gas_lbl = tk.Label(expense_frame, textvariable=self.gas_var)
         gas_lbl.grid(row=6, column=1)
 		
-		#Frame for buttons on main_window
-		save_frame = tk.Frame(main_window)
-		save_frame.pack(side='top')
+	#Frame for buttons on main_window
+	save_frame = tk.Frame(main_window)
+	save_frame.pack(side='top')
 		
-		#Save, load, and quit button widgets
-		save_btn = tk.Button(save_frame, text='Save')
-		load_btn = tk.Button(save_frame, textl='Load')
-		quit_btn = tk.Button(save_frame,text='Quit', command=main_window.destroy)
+	#Save, load, and quit button widgets
+	save_btn = tk.Button(save_frame, text='Save')
+	load_btn = tk.Button(save_frame, textl='Load')
+	quit_btn = tk.Button(save_frame,text='Quit', command=main_window.destroy)
 
         tk.mainloop()
 
