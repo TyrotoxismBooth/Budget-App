@@ -5,12 +5,12 @@ class Budget:
     #Pop-up windows are defined in functions after __init__
     #and logic functions are defined after all the windows are defined.
     def __init__(self):
-        main_widow = tk.Tk()
-        main_widow.geometry('300x400')
-        main_widow.title('Budget App')
+        main_window = tk.Tk()
+        main_window.geometry('300x400')
+        main_window.title('Budget App')
 
         # Frame to display summary totals
-        summary_frame = tk.Frame(main_widow)
+        summary_frame = tk.Frame(main_window)
         summary_frame.pack(side='top')
         summary_lbl = tk.Label(summary_frame, text='Budget Summary')
         summary_lbl.grid(row=0, sticky='EW')
@@ -34,7 +34,7 @@ class Budget:
         total.grid(row=3, column=1)
 
         #Frame for entry buttons
-        button_frame = tk.Frame(main_widow)
+        button_frame = tk.Frame(main_window)
         button_frame.pack(side='top', pady='15')
 
         #Button widgets to open entry dialogue boxes
@@ -46,7 +46,7 @@ class Budget:
         expense_button.pack(side='left')
 
         #Frame for the expense totals
-        expense_frame = tk.Frame(main_widow)
+        expense_frame = tk.Frame(main_window)
         expense_frame.pack(side='top', pady='15')
 
         self.expense_title = tk.Label(expense_frame, text='Expenses by Category')
@@ -85,6 +85,15 @@ class Budget:
         gas.grid(row=6, column=0)
         gas_lbl = tk.Label(expense_frame, textvariable=self.gas_var)
         gas_lbl.grid(row=6, column=1)
+		
+	#Frame for buttons on main_window
+	save_frame = tk.Frame(main_window)
+	save_frame.pack(side='top')
+		
+	#Save, load, and quit button widgets
+	save_btn = tk.Button(save_frame, text='Save')
+	load_btn = tk.Button(save_frame, textl='Load')
+	quit_btn = tk.Button(save_frame,text='Quit', command=main_window.destroy)
 
         tk.mainloop()
 
