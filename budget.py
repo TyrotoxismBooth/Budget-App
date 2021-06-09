@@ -270,5 +270,8 @@ class Budget:
         income = self.income_var.get()
         expense = self.expense_var.get()
         self.total_var.set(income - expense)
+		
+	def save_btn(self):
+		save_file = open(
      
 app = Budget()
